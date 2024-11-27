@@ -9,7 +9,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {         
         registry.addMapping("/**")                 
-        .allowedOrigins("https://datavisa-a95e5e4eec8d.herokuapp.com") // Domínio do React                
+        .allowedOrigins("https://datavisa-frontend-600elynko-rafael-aguiars-projects.vercel.app") // Domínio do React                
         .allowedMethods("GET", "POST", "PUT", "DELETE") 
         .allowCredentials(true); 
     } 
