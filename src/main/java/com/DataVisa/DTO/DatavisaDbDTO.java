@@ -1,5 +1,7 @@
 package com.DataVisa.DTO;
 
+import java.sql.Timestamp;
+
 import com.DataVisa.Models.DBModel;
 
 import jakarta.persistence.GeneratedValue;
@@ -23,6 +25,7 @@ public class DatavisaDbDTO {
         this.hostName = dbModel.getHostName();
         this.portDb = dbModel.getPortDb();
         this.caminhoDb = dbModel.getCaminhoDb();
+        this.lastModification = dbModel.getLastModification();
 		this.isActive = dbModel.getIsActive();
         this.empresaId = dbModel.getEmpresaId();
     }
@@ -66,6 +69,8 @@ public class DatavisaDbDTO {
 	private String empresaNome;
 	
 	private Long empresaId;
+	
+	private Timestamp lastModification;
 	
 	private int isActive;
 	

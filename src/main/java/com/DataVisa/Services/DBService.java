@@ -3,6 +3,8 @@ package com.DataVisa.Services;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
@@ -104,6 +106,7 @@ public class DBService{
 			}
 			
 			dto.getDatabase().setId(db.get().getId());
+			dto.getDatabase().setLastModification(Timestamp.from(Instant.now()));
 			dto.setDatabase(databaseRepository.save(dto.getDatabase()));
 			
 			tableSawService.updatePermitionsTable(dto.getDatabase().getNomeConexao(), dto);

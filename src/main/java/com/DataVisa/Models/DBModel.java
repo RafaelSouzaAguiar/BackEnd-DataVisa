@@ -1,6 +1,7 @@
 package com.DataVisa.Models;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -40,6 +41,8 @@ public class DBModel implements Serializable {
 	private int portDb;
 	
 	private String caminhoDb;
+	
+	private Timestamp lastModification;
 	
 	private int isActive;
 	

@@ -97,7 +97,11 @@ public class TemplateService{
 				throw new IllegalArgumentException("Template não cadastrado.");
 			}
 			
+			template.setConexaoId(datavisaSession.getConexao());
+			template.setConexaoName(datavisaSession.getNomeConexao());;
+			template.setTableName(DatavisaUtils.tableNameMapper(template.getSqlQuery()));
 			template.setEmpresaId(dbRepository.findById(datavisaSession.getConexao()).get().getEmpresaId());
+			template.setTablePermition(tableSawService.getTablePermition(template.getTableName(), template.getConexaoName()));
 			template.setLastModification(Timestamp.from(Instant.now()));
 			templateRepository.updateTemplate(template);
 			

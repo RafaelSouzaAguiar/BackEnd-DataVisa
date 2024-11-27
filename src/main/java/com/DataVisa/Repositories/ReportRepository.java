@@ -16,7 +16,8 @@ public interface ReportRepository extends JpaRepository<ReportModel, Long>{
 	
 	@Query("SELECT r FROM ReportModel r WHERE " +
 	           "(r.creatorEmail = :email OR " +
-	           "(r.empresaId = :empresaId AND r.isPublic = 1 AND r.tablePermition <= :permissaoTabela))")
+	           "(r.empresaId = :empresaId AND r.isPublic = 1 AND r.tablePermition <= :permissaoTabela)) " +
+	           "ORDER BY r.creationDate DESC")
     List<ReportModel> findActives(@Param("empresaId") Long empresaId, 
 	                                     @Param("email") String email, 
 	                                     @Param("permissaoTabela") int permissaoTabela);

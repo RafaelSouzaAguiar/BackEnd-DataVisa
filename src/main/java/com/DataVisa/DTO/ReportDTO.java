@@ -23,6 +23,8 @@ public class ReportDTO implements Serializable {
 		this.creatorName = reportModel.getCreatorName();
 		this.templateName = reportModel.getTemplateName();
 		this.sqlQuery = reportModel.getSqlQuery();
+		this.selectedLabel = reportModel.getSelectedLabel();
+		this.selectedItem = reportModel.getSelectedItem();
 		this.graphType = reportModel.getGraphType();
 		this.reportLabels = reportModel.getReportLabels();
 		this.reportValues = reportModel.getReportValues();
@@ -47,6 +49,10 @@ public class ReportDTO implements Serializable {
 	private String templateName;
 	
 	private String sqlQuery;
+
+	private String selectedLabel;
+	
+	private String selectedItem;
 	
 	private String graphType;
 	
